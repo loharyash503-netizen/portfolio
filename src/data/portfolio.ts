@@ -392,55 +392,6 @@ export const projects: Project[] = [
     figmaNode: "46-619",
   },
   {
-    slug: "kiosk",
-    title: "Dandi Kutir Kiosk",
-    tagline: "Usability analysis of a public museum kiosk.",
-    category: "UX Research · Public Interface",
-    cover: "/covers/kiosk.jpg",
-    accent: "blue",
-    board: true,
-    summary:
-      "An observational study of the information kiosks at Dandi Kutir, Mahatma Mandir, followed by a cleaner, simpler interface redesign.",
-    role: "UX Researcher",
-    team: "with Vipul Khunti",
-    methods: ["Field observation", "Usability review", "Redesign"],
-    problem:
-      "The kiosk UI has multiple usability issues that make it hard for visitors to find information quickly.",
-    figmaNode: "37-618",
-  },
-  {
-    slug: "led-bulb",
-    title: "The 3-Mode LED Bulb",
-    tagline: "Applying The Design of Everyday Things to a real product.",
-    category: "Interaction Design · Industry Connect",
-    cover: "/covers/led-bulb.jpg",
-    accent: "violet",
-    board: true,
-    summary:
-      "A study of Don Norman's affordance, signifiers, mapping and feedback across everyday objects, ending with a redesign of a confusing 3-mode LED bulb.",
-    role: "Designer",
-    methods: ["Affordance", "Signifiers", "Mapping", "Feedback", "Interaction analysis"],
-    problem:
-      "Users can't tell which mode a 3-mode LED bulb is in, or how to reach the mode they want, using a single switch.",
-    figmaNode: "1-1363",
-  },
-  {
-    slug: "smartsit",
-    title: "SmartSit Study Desk",
-    tagline: "An ergonomic study desk and chair for children aged 5–12.",
-    category: "Product Design · Ergonomics",
-    cover: "/covers/smartsit.jpg",
-    accent: "blue",
-    board: true,
-    summary:
-      "A child-friendly study table and chair based on anthropometric measurements, with rounded edges, an adjustable seat and a calm, nature-inspired theme.",
-    role: "Product Designer",
-    methods: ["Anthropometrics", "Sketching", "Ergonomics"],
-    problem:
-      "Most study furniture isn't designed for children's bodies, leading to poor posture, back pain, eye strain and sharp-edge hazards.",
-    figmaNode: "46-13860",
-  },
-  {
     slug: "navjivan",
     title: "Navjivan Milk",
     tagline: "Brand identity for a dairy brand.",

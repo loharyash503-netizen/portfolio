@@ -10,18 +10,17 @@ export function Hero() {
         <div className="absolute -left-[20%] top-0 size-[65vmax] animate-drift rounded-full bg-[radial-gradient(circle,rgb(42_111_182/0.16),transparent_62%)] will-change-transform" />
         <div className="absolute -right-[25%] bottom-[-15%] size-[60vmax] animate-drift-slow rounded-full bg-[radial-gradient(circle,rgb(205_71_71/0.11),transparent_62%)] will-change-transform" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-ink)_78%)]" />
+        {/* design-canvas grid, faded out toward the edges */}
+        <div className="bg-grid absolute inset-0" />
       </div>
       <div className="relative z-10 text-center">
-        <div className="relative">
-          <div className="orb" aria-hidden />
-          <h1 className="relative font-display text-[clamp(2.5rem,9vw,6.25rem)] font-bold leading-[0.95] tracking-tight drop-shadow-[0_6px_30px_rgba(0,0,0,0.55)]">
-            <span className="text-steel">Research.</span>{" "}
-            <span className="text-signal">Design.</span>{" "}
-            <span className="text-chrome">Delight.</span>
-          </h1>
-        </div>
+        <h1 className="relative font-display text-[clamp(2.5rem,9vw,6.25rem)] font-bold leading-[0.95] tracking-tight">
+          <span className="text-steel">Research.</span>{" "}
+          <SelectedWord>Design.</SelectedWord>{" "}
+          <span className="text-chrome">Delight.</span>
+        </h1>
 
-        <p className="relative mt-6 text-[0.9rem] sm:text-xl">
+        <p className="relative mt-10 text-[0.9rem] sm:mt-16 sm:text-xl">
           <span className="text-blue-2">User Research</span>
           <span className="mx-1.5 text-dim sm:mx-2">•</span>
           <span className="text-red-2">Interaction Design</span>
@@ -58,5 +57,29 @@ export function Hero() {
         <ArrowDown className="size-6 animate-bob" />
       </Link>
     </section>
+  );
+}
+
+// A word wrapped in a Figma-style selection box, with a collaborator cursor.
+function SelectedWord({ children }: { children: React.ReactNode }) {
+  const handle = "absolute size-2 border border-blue-2 bg-ink";
+  return (
+    <span className="relative inline-block">
+      <span className="text-signal">{children}</span>
+      <span aria-hidden className="pointer-events-none absolute -inset-x-1 -bottom-2 -top-0.5 border border-blue-2 sm:-inset-x-3 sm:-bottom-3">
+        <span className={`${handle} -left-1 -top-1`} />
+        <span className={`${handle} -right-1 -top-1`} />
+        <span className={`${handle} -bottom-1 -left-1`} />
+        <span className={`${handle} -bottom-1 -right-1`} />
+      </span>
+      <span aria-hidden className="pointer-events-none absolute -bottom-7 right-0 flex items-start sm:-bottom-11 sm:-right-14">
+        <svg viewBox="0 0 16 16" className="size-4 text-red-2 sm:size-5">
+          <path d="M1 1l5.5 14 2-6 6-2z" fill="currentColor" stroke="white" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+        <span className="mt-3 rounded-md bg-red-2 px-1.5 py-0.5 font-sans text-[11px] font-semibold tracking-normal text-white sm:mt-4 sm:text-xs">
+          Yash
+        </span>
+      </span>
+    </span>
   );
 }

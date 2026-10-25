@@ -86,9 +86,7 @@ body {
   color: white;
 }
 
-/* Glowing core in the hero, as in the reference.
-   On phones the headline wraps to two lines, so the core sits behind the first (coloured) line
-   and the silver "Delight." stays readable. */
+/* Glowing core behind the 404 heading. */
 @media (max-width: 639px) {
   .orb {
     top: 20% !important;
@@ -119,6 +117,16 @@ body {
     0 0 320px 160px rgb(42 111 182 / 0.12);
   animation: var(--animate-orb);
   pointer-events: none;
+}
+
+/* Canvas grid behind the hero, fading out from the centre */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 45%, black 15%, transparent 75%);
 }
 
 .text-chrome {

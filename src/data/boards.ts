@@ -55,20 +55,6 @@ export const boards: Record<string, Slice[]> = {
     { src: "/work/inshot/02.jpg", w: 960, h: 1400 },
     { src: "/work/inshot/03.jpg", w: 960, h: 745 },
   ],
-  "kiosk": [
-    { src: "/work/kiosk/00.jpg", w: 960, h: 1400 },
-    { src: "/work/kiosk/01.jpg", w: 960, h: 1400 },
-    { src: "/work/kiosk/02.jpg", w: 960, h: 1400 },
-    { src: "/work/kiosk/03.jpg", w: 960, h: 271 },
-  ],
-  "led-bulb": [
-    { src: "/work/led-bulb/00.jpg", w: 960, h: 1400 },
-    { src: "/work/led-bulb/01.jpg", w: 960, h: 1400 },
-    { src: "/work/led-bulb/02.jpg", w: 960, h: 1400 },
-    { src: "/work/led-bulb/03.jpg", w: 960, h: 1400 },
-    { src: "/work/led-bulb/04.jpg", w: 960, h: 1400 },
-    { src: "/work/led-bulb/05.jpg", w: 960, h: 379 },
-  ],
   "sanchita": [
     { src: "/work/sanchita/00.jpg", w: 960, h: 1400 },
     { src: "/work/sanchita/01.jpg", w: 960, h: 1400 },
@@ -78,11 +64,6 @@ export const boards: Record<string, Slice[]> = {
     { src: "/work/sanchita/05.jpg", w: 960, h: 1400 },
     { src: "/work/sanchita/06.jpg", w: 960, h: 1400 },
     { src: "/work/sanchita/07.jpg", w: 960, h: 1047 },
-  ],
-  "smartsit": [
-    { src: "/work/smartsit/00.jpg", w: 960, h: 1400 },
-    { src: "/work/smartsit/01.jpg", w: 960, h: 1400 },
-    { src: "/work/smartsit/02.jpg", w: 960, h: 190 },
   ],
   "ux-laws": [
     { src: "/work/ux-laws/00.jpg", w: 960, h: 1400 },
