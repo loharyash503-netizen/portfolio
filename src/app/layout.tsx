@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { CursorFollower } from "@/components/CursorFollower";
 import { profile } from "@/data/portfolio";
 import "./globals.css";
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Nav />
         {children}
         <Footer />
+        <CursorFollower />
       </body>
     </html>
   );
