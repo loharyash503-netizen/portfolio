@@ -278,9 +278,12 @@ body {
 /* Canvas stage: fades in after the headline, then runs one shared 12s loop.
    Every looping part below uses the same duration and delay so they stay in sync with the guide cursor:
    research 0–20% → wireframe 27–40% → prototype click 60–64% → design system 82–92%. */
-.hero-stage {
+.hero-stage,
+.hero-strip {
   --loop: 12s;
   --loop-delay: 2.6s;
+}
+.hero-stage {
   animation: stage-in 1.2s ease-out 1.1s both;
 }
 @keyframes stage-in {

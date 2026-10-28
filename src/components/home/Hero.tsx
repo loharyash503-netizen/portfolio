@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { ArrowDown, ArrowRight } from "../icons";
-import { HeroCanvas } from "./HeroCanvas";
+import { CanvasStrip, HeroCanvas } from "./HeroCanvas";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-svh items-center justify-center overflow-hidden px-4">
+    // Below xl the card strip makes the content taller, so pad it clear of the nav and the scroll arrow
+    <section className="relative flex min-h-svh items-center justify-center overflow-hidden px-4 max-xl:pb-20 max-xl:pt-24">
       {/* ambient light */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         {/* radial gradients instead of blur filters: same softness, far cheaper to animate */}
@@ -17,7 +18,8 @@ export function Hero() {
       </div>
       <HeroCanvas />
 
-      <div className="relative z-10 text-center">
+      {/* max-w-full keeps the full-bleed card strip from widening the text column */}
+      <div className="relative z-10 max-w-full text-center">
         <h1
           className="float relative font-display text-[clamp(2.5rem,9vw,6.25rem)] font-bold leading-[0.95] tracking-tight"
           style={{ "--float": "3px", "--float-dur": "10s" } as CSSProperties}
@@ -60,6 +62,8 @@ export function Hero() {
             Get in touch
           </Link>
         </div>
+
+        <CanvasStrip />
       </div>
 
       <Link

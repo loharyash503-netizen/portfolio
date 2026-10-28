@@ -66,6 +66,42 @@ export function HeroCanvas() {
   );
 }
 
+// Phone/tablet version of the canvas: the same cards in a slow marquee under the hero buttons
+export function CanvasStrip() {
+  const cards = (
+    <div className="flex shrink-0 items-center gap-4 pr-4">
+      <div className={`${PANEL} w-[220px]`}>
+        <Research />
+      </div>
+      <Wireframe />
+      <div className={`${PANEL} w-[240px]`}>
+        <DesignSystem />
+      </div>
+      <div className={`${PANEL} w-[180px]`}>
+        <Prototype />
+      </div>
+      <div className={`${PANEL} w-[250px]`}>
+        <UserFlow />
+      </div>
+    </div>
+  );
+  return (
+    <div
+      aria-hidden
+      className="hero-strip hero-rise pointer-events-none relative left-1/2 mt-12 w-screen -translate-x-1/2 overflow-hidden text-left [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] xl:hidden"
+      style={{ "--d": "900ms" } as CSSProperties}
+    >
+      <div className="flex w-max animate-marquee py-2">
+        {cards}
+        {cards}
+      </div>
+    </div>
+  );
+}
+
+const PANEL =
+  "rounded-2xl border border-white/10 bg-surface-2/75 p-3 shadow-[0_24px_60px_-24px_rgb(0_0_0/0.85)] backdrop-blur-md";
+
 const depth = (d: number) => ({ "--depth": d }) as CSSProperties;
 
 function Card({
@@ -88,7 +124,7 @@ function Card({
   return (
     <div className={`absolute ${className}`} style={{ left: x, top: y }}>
       <div
-        className={`float ${bare ? "" : "rounded-2xl border border-white/10 bg-surface-2/75 p-3 shadow-[0_24px_60px_-24px_rgb(0_0_0/0.85)] backdrop-blur-md"}`}
+        className={`float ${bare ? "" : PANEL}`}
         style={{ "--float": "7px", "--float-dur": float, "--float-delay": delay } as CSSProperties}
       >
         {children}
