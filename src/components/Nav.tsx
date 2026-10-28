@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { ArrowUpRight } from "./icons";
 
 const links = [
   { href: "/#about", label: "About me" },
@@ -10,6 +11,8 @@ const links = [
   { href: "/#work", label: "Best works" },
   { href: "/#contact", label: "Contacts" },
 ];
+
+const resume = "/Yash-Lohar-Resume.pdf";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,6 +51,17 @@ export function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-medium uppercase tracking-wide text-fg transition-colors hover:border-white/40 hover:bg-white/5 hover:text-white"
+            >
+              Resume
+              <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+          </li>
         </ul>
 
         <button
@@ -81,6 +95,18 @@ export function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 rounded-xl px-3 py-3 font-display text-2xl text-fg transition-colors hover:bg-white/5"
+            >
+              Resume
+              <ArrowUpRight className="size-5 text-dim" />
+            </a>
+          </li>
         </ul>
       </div>
     </header>
