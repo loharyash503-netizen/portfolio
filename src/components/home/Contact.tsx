@@ -1,12 +1,11 @@
 import { profile } from "@/data/portfolio";
 import { Reveal } from "../Reveal";
 import { CopyEmail } from "../CopyEmail";
-import { ArrowUpRight, Behance, Figma, LinkedIn, Phone } from "../icons";
+import { ArrowUpRight, Behance, LinkedIn, Phone } from "../icons";
 
 const channels = [
   { label: "LinkedIn", value: "in/yashlohar14", href: profile.linkedin, Icon: LinkedIn },
   { label: "Behance", value: "behance.net/yashlohar14", href: profile.behance, Icon: Behance },
-  { label: "Figma", value: "Case-study boards", href: profile.figma, Icon: Figma },
   { label: "Phone", value: profile.phone, href: profile.phoneHref, Icon: Phone },
 ];
 
@@ -37,7 +36,7 @@ export function Contact() {
         <Reveal delay={200}>
           <ul className="mx-auto mt-14 grid max-w-3xl gap-3 text-left sm:grid-cols-2">
             {channels.map(({ label, value, href, Icon }) => (
-              <li key={label}>
+              <li key={label} className="sm:odd:last:col-span-2 sm:odd:last:w-[calc(50%-0.375rem)] sm:odd:last:justify-self-center">
                 <a
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
