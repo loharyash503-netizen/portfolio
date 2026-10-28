@@ -189,7 +189,7 @@ function DesignSystem() {
         </span>
       </div>
       <div className="mt-3 flex items-center gap-2">
-        <span className="rounded-full bg-white px-2.5 py-1 text-[8px] font-semibold uppercase tracking-wider text-ink">Button</span>
+        <span className="rounded-full border border-dashed border-violet/60 px-2 py-0.5 text-[8px] uppercase tracking-wider text-violet/90">◇ Button</span>
         <span className="flex h-4 w-7 rounded-full bg-blue-2 p-0.5">
           <span className="ml-auto size-3 rounded-full bg-white" />
         </span>
@@ -200,20 +200,37 @@ function DesignSystem() {
   );
 }
 
-// A button the guide cursor clicks
+// A two-screen prototype diagram: the guide cursor taps the mini button on the first screen
+// and the second screen shows the result. Drawn small, as a diagram, so it doesn't read as a real button.
 function Prototype() {
+  const screen = "relative h-[78px] w-[58px] rounded-lg border border-white/10 bg-ink p-1.5";
   return (
     <>
       <Label dot="bg-red-2">Prototype</Label>
-      <div className="space-y-1.5">
-        <div className="h-1.5 w-3/4 rounded bg-white/15" />
-        <div className="h-1.5 w-1/2 rounded bg-white/10" />
-      </div>
-      <div className="relative mt-3">
-        <span className="proto-ripple absolute left-1/2 top-1/2 size-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-2/40" />
-        <div className="proto-btn relative grid h-7 place-items-center overflow-hidden rounded-full bg-blue-2 text-[10px] font-semibold uppercase tracking-wider text-white">
-          <span className="proto-a col-start-1 row-start-1">Continue</span>
-          <span className="proto-b col-start-1 row-start-1">Done ✓</span>
+      <div className="flex items-center gap-2">
+        <div className={`${screen} flex flex-col`}>
+          <div className="h-1 w-3/4 rounded bg-white/15" />
+          <div className="mt-1 h-1 w-1/2 rounded bg-white/10" />
+          <div className="relative mt-auto">
+            <span className="proto-ripple absolute left-1/2 top-1/2 size-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-2/40" />
+            <div className="proto-btn relative h-3.5 rounded-full bg-blue-2/80" />
+          </div>
+        </div>
+        <div className="flex w-[22px] flex-col items-center gap-0.5 text-[6px] uppercase tracking-wider text-dim">
+          <span>tap</span>
+          <svg viewBox="0 0 22 8" fill="none" className="w-full stroke-blue-2/70">
+            <path d="M1 4h18M16 1l3 3-3 3" strokeDasharray="2 2" />
+          </svg>
+        </div>
+        <div className={`${screen} grid place-items-center`}>
+          <div className="proto-a col-start-1 row-start-1 w-full space-y-1">
+            <div className="mx-auto size-4 rounded-full border border-dashed border-white/15" />
+            <div className="mx-auto h-1 w-3/4 rounded bg-white/10" />
+          </div>
+          <div className="proto-b col-start-1 row-start-1 w-full space-y-1">
+            <div className="mx-auto grid size-4 place-items-center rounded-full bg-blue-2/25 text-[8px] text-blue-2">✓</div>
+            <div className="mx-auto h-1 w-3/4 rounded bg-fg/40" />
+          </div>
         </div>
       </div>
     </>

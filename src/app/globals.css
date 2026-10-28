@@ -355,7 +355,7 @@ body {
   }
   60%,
   70% {
-    transform: translate(995px, 612px);
+    transform: translate(942px, 632px);
     animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1);
   }
   82%,
